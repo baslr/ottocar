@@ -37,6 +37,7 @@ then
     path=mongodb-osx-x86_64-$version
 		wget http://fastdl.mongodb.org/osx/$path.tgz
   elfi [ $machine = "Linux" ]
+  then
     path=mongodb-linux-x86_64-$version
     wget http://fastdl.mongodb.org/linux/$path.tgz
   else
