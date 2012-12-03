@@ -30,28 +30,21 @@ fi
 
 machine=`uname`
 
-if [ $machine = "Darwin" ]
+if [ $software = "mongodb" ]
 then
-	echo "System OS X"
-	if [ $software = "mongodb" ]
-	then
-		path=mongodb-osx-x86_64-$version
+  if [ $machine = "Darwin" ]
+  then 
+    path=mongodb-osx-x86_64-$version
 		wget http://fastdl.mongodb.org/osx/$path.tgz
-		tar xf $path.tgz
-		rm $path.tgz
-		cp $path/bin/* /usr/bin/
-		rm -rf $path
-	fi
-elif [ $machine = "Linux" ]
-then
-	echo "System Linux"
-	if [ $software = "mongodb" ]
-	then
-                path=mongodb-linux-x86_64-$version
-                wget http://fastdl.mongodb.org/linux/$path.tgz
-                tar xf $path.tgz
-                rm $path.tgz
-                cp $path/bin/* /usr/bin/
-                rm -rf $path
-	fi
+  elfi [ $machine = "Linux" ]
+    path=mongodb-linux-x86_64-$version
+    wget http://fastdl.mongodb.org/linux/$path.tgz
+  else
+    echo "unsupported plattform :S"
+    exit 1
+  
+	tar xf $path.tgz
+	rm $path.tgz
+	cp $path/bin/* /usr/bin/
+	rm -rf $path
 fi
