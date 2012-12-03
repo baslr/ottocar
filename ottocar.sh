@@ -42,6 +42,7 @@ then
   else
     echo "unsupported plattform :S"
     exit 1
+  fi
   
 	tar xf $path.tgz
 	rm $path.tgz
