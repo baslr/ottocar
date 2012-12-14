@@ -52,8 +52,8 @@ elif [ $software = "nodejs" ]
 then
   if [ $machine = "Linux" ]
   then
-    path=node-v$version-linux-x64.tar.gz
-    wget http://nodejs.org/dist/v$version/$path
+    path=node-v$version-linux-x64
+    wget http://nodejs.org/dist/v$version/$path.tar.gz
   fi
   
   tar xf $path.tar.gz
