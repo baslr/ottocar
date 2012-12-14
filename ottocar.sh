@@ -47,7 +47,19 @@ then
   rm $path.tgz
   cp $path/bin/* /usr/bin/
   rm -rf $path
+
+elif [ $software = "nodejs" ]
+then
+  if [ $machine = "Linux" ]
+  then
+    path=node-v$version-linux-x64.tar.gz
+    wget http://nodejs.org/dist/v$version/$path
+  fi
+  
+  tar xf $path.tar.gz
+  rm $path.tar.gz
+  cp $path/bin/node /usr/bin/
+  rm -rf $path
 fi
 
-
-# nodeUrl=http://nodejs.org/dist/v0.8.15/node-v0.8.15-linux-x64.tar.gz
+exit 0
