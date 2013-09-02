@@ -1,3 +1,11 @@
+archi=`uname -m`
+
+if [ ! $archi = "x86_64" ]
+then
+  echo "use 64bits"
+  exit 1
+fi
+
 args=("$@")
 if [ ${args[0]} ]
 then
@@ -45,7 +53,7 @@ then
 
   tar xf $path.tgz
   rm $path.tgz
-  cp $path/bin/* /usr/bin/
+  cp $path/bin/* /usr/local/bin/
   rm -rf $path
 
 elif [ $software = "nodejs" ]
@@ -58,7 +66,7 @@ then
   
   tar xf $path.tar.gz
   rm $path.tar.gz
-  cp $path/bin/node /usr/bin/
+  cp $path/bin/node /usr/local/bin/
   rm -rf $path
 fi
 
