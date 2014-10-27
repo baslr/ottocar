@@ -12,7 +12,7 @@ tar xf $tgzfile
 
 cd $file
 
-./configure --no-ssl2 --without-npm
+./configure --without-ssl2 --without-ssl3 --without-npm
 make
 cp out/Release/node /usr/local/bin/node
 
