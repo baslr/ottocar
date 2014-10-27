@@ -6,7 +6,7 @@ cwd=`pwd`
 file="node-v$version"
 tgzfile="$file.tar.gz"
 
-wget http://nodejs.org/dist/v$version/$tgzfile
+wget https://nodejs.org/dist/v$version/$tgzfile
 
 tar xf $tgzfile
 
